@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|c:\\users\\killerlp\\downloads\\transfernow-=uwu=\\newsteamconnection\\steamedhamslauncher\\steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\usersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\usersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\usersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\usersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\gamessearch.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamessearch.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\ownedgamesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\ownedgamesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\usersettings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\usersettings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\steamedhamslauncher\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\Form1.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\Form1.cs",
+              "ViewState": "AQIAAOABAAAAAAAAAAAjwO8BAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T13:18:59.546Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\Form1.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.cs [Entwurf]",
+              "RelativeToolTip": "SteamedHamsLauncher\\Form1.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T13:18:39.362Z",
+              "IsPinned": true,
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GamesSearch.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\GamesSearch.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\GamesSearch.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAAwGwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T22:14:56.294Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GamesSearch.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\GamesSearch.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.cs [Entwurf]",
+              "RelativeToolTip": "SteamedHamsLauncher\\GamesSearch.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T22:13:28.249Z",
+              "IsPinned": true,
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CompareFriends.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\CompareFriends.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.cs [Entwurf]",
+              "RelativeToolTip": "SteamedHamsLauncher\\CompareFriends.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T22:14:32.061Z",
+              "IsPinned": true,
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompareFriends.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\CompareFriends.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\CompareFriends.cs",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAUwJYAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T22:14:42.005Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserSettings.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\UserSettings.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\UserSettings.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAkwFkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T14:42:40.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserSettings.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\UserSettings.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.cs [Entwurf]",
+              "RelativeToolTip": "SteamedHamsLauncher\\UserSettings.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T14:42:38.843Z",
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GamesSearch.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.Designer.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\GamesSearch.Designer.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.Designer.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\GamesSearch.Designer.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAADgv1AAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T22:47:46.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OwnedGamesResponse.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\OwnedGamesResponse.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\OwnedGamesResponse.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\OwnedGamesResponse.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\OwnedGamesResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAlwBgAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T15:29:08.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.Designer.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\Form1.Designer.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAiwGsAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T00:19:21.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserSettings.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.Designer.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\UserSettings.Designer.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.Designer.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\UserSettings.Designer.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAiwDEAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T23:17:59.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameData.cs",
+              "DocumentMoniker": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GameData.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\GameData.cs",
+              "ToolTip": "C:\\Users\\KillerLP\\Downloads\\TransferNow-=UwU=\\NewSteamConnection\\SteamedHamsLauncher\\SteamedHamsLauncher\\GameData.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\GameData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T15:23:10.866Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
