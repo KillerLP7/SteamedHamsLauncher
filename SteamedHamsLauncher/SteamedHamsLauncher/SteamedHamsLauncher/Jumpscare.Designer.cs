@@ -37,7 +37,7 @@
             // pbxJumpscare
             // 
             this.pbxJumpscare.Image = ((System.Drawing.Image)(resources.GetObject("pbxJumpscare.Image")));
-            this.pbxJumpscare.Location = new System.Drawing.Point(0, -1);
+            this.pbxJumpscare.Location = new System.Drawing.Point(-1, 0);
             this.pbxJumpscare.Name = "pbxJumpscare";
             this.pbxJumpscare.Size = new System.Drawing.Size(1920, 1080);
             this.pbxJumpscare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
