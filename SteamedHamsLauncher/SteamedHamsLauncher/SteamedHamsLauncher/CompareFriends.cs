@@ -29,6 +29,7 @@ namespace SteamedHamsLauncher
         private async void FrmCompareFriends_Load(object sender, EventArgs e)
         {
             await LoadFriendList();
+            UpdateGameDisplay();
             if (friends != null && friends.Count > 0)
             {
                 DisplayFriendInfo();
@@ -98,7 +99,9 @@ namespace SteamedHamsLauncher
                         friend.personaname = player.personaname;
                     }
                 }
+                DisplayFriendInfo();
             }
+            
         }
 
         private async void DisplayFriendInfo()
@@ -177,6 +180,7 @@ namespace SteamedHamsLauncher
                 };
 
                 frmFriendsSearch.ShowDialog();
+                DisplayFriendInfo();
             }
             else
             {
@@ -227,7 +231,7 @@ namespace SteamedHamsLauncher
             }
         }
 
-        private async void btnGetAllGames_Click(object sender, EventArgs e)
+        private void btnGetAllGames_Click(object sender, EventArgs e)
         {
             // Lade die Spiele für die aktuelle Steam-ID
             //var ownedGames = await LoadOwnedGamesAsync(steamId);
@@ -251,7 +255,7 @@ namespace SteamedHamsLauncher
         }
 
 
-        private void btnSwitchPlaces_Click(object sender, EventArgs e)
+        private async void btnSwitchPlaces_Click(object sender, EventArgs e)
         {
             if (friends == null || friends.Count == 0) return;
 
@@ -274,17 +278,21 @@ namespace SteamedHamsLauncher
                 friendIndex = 0;
             }
 
-            // Update the display with the new information
-            DisplayFriendInfo();
-
             // Swap images
             pbxUser.ImageLocation = $"https://www.steamidfinder.com/signature/{steamId}.png";
             pbxFriend.ImageLocation = $"https://www.steamidfinder.com/signature/{friends[friendIndex].steamid}.png";
+
+            // Update the display with the new information
+            await LoadFriendNames();
+            await LoadFriendList();
+            DisplayFriendInfo();
         }
 
 
         private List<GameFriend> ownedGames;
         private int gameIndex = 0;
+
+        //Ich möchte gerne durch 
 
         private void btnNextGame_Click(object sender, EventArgs e)
         {
@@ -316,6 +324,7 @@ namespace SteamedHamsLauncher
             var currentGame = ownedGames[gameIndex];
             lblCurrentGameName.Text = currentGame.Name;
             lblTotalCommonGames.Text = $"{gameIndex + 1} / {ownedGames.Count}";
+            DisplayFriendInfo();
         }
 
         private async Task<List<GameFriend>> LoadOwnedGamesAsync(string steamId)

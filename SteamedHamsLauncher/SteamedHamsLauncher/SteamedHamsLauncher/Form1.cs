@@ -158,7 +158,7 @@ namespace SteamedHamsLauncher
                         lblGameName.Text = name;
                         lblGameDescription.Text = shortDescription;
                         lblGameData.Text = $"Playtime (Last 2 weeks): {playtimeTwoWeeks}\r\nTotal playtime: {playtime}\r\n\r\nLast time played: {lastPlayedDate}\r\nCurrent players online: {currentPlayersText}\r\n";
-                        lblTotalGames.Text = $"{index} / {totalGames}";
+                        lblTotalGames.Text = $"{index + 1} / {totalGames}";
                         picGameImage.ImageLocation = headerImage;
 
                     }
