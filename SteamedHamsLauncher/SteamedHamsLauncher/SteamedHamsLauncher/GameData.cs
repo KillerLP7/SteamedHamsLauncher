@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace SteamedHamsLauncher
 {
-    public class GameData
-    {
-        //SteamAPI -> AppDetails -> GameData
-        //Die Daten die man vom Spiel nehmen kann
-        [JsonProperty("name")]
-        public string Name { get; set; }
+    //public class GameData
+    //{
+    //    //SteamAPI -> AppDetails -> GameData
+    //    //Die Daten die man vom Spiel nehmen kann
+    //    [JsonProperty("name")]
+    //    public string Name { get; set; }
 
-        [JsonProperty("short_description")]
-        public string ShortDescription { get; set; }
+    //    [JsonProperty("short_description")]
+    //    public string ShortDescription { get; set; }
 
-        // Weiter Daten entnehmen ...
-    }
+    //    // Weiter Daten entnehmen ...
+    //}
 }
