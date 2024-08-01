@@ -18,24 +18,50 @@ namespace SteamedHamsLauncher
         private int index = 0;
         private bool isUserSettingsOn;
         private string steamId = "";
+        private string appId = "";
         private string apiKey = "";
         private System.Windows.Forms.Timer updateTimer;
         private int timerCounter = 0;
         private Timer jumpscareTimer;
         private Random random;
 
-        public FrmShowGames()
+        public FrmShowGames(string steamId = null, string apiKey = null, string appId = null)
         {
             InitializeComponent();
-            LoadSettings();
+
+            this.steamId = steamId;
+            this.appId = appId;
+            this.apiKey = apiKey;
+
+            var compareFriendsForm = new FrmCompareFriends(steamId, apiKey, appId);
+            compareFriendsForm.SteamIdUpdated += OnSteamIdUpdated; // Bind the event
+
+            Console.WriteLine("Ereignis gebunden");
 
             updateTimer = new System.Windows.Forms.Timer();
             updateTimer.Interval = 1000; // 1 Sekunde (1000 Millisekunden)
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
 
-            // Überprüfeob SteamId und ApiKey vorhanden sind
+            // Überprüfe ob SteamId und ApiKey vorhanden sind
             CheckSettings();
+        }
+
+        private async void OnSteamIdUpdated(string newSteamId)
+        {
+            // Debugging-Ausgabe hinzufügen
+            Console.WriteLine("OnSteamIdUpdated aufgerufen");
+
+            // Aktualisiere die Steam-ID des Hauptfensters
+            this.steamId = newSteamId;
+            Console.WriteLine("Current SteamId: " + steamId);
+            await InitializeGames();
+            if (games.Count > 0)
+            {
+                originalGames = new List<Game>(games); // Original-Liste speichern
+                ShowGame(index);
+            }
+            // Hier kannst du zusätzliche Logik hinzufügen, falls erforderlich
         }
 
         private List<Game> originalGames;
@@ -56,7 +82,7 @@ namespace SteamedHamsLauncher
             if (!string.IsNullOrEmpty(apiKey) && !string.IsNullOrEmpty(steamId))
             {
                 string steamApiUrl = $"https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key={apiKey}&steamid={steamId}&include_appinfo=true";
-
+                Console.WriteLine("My newest SteamID:" + steamId);
                 try
                 {
                     string jsonData = await GetJsonDataAsync(steamApiUrl);

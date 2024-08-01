@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|e:\\my games\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|e:\\my games\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|e:\\my games\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\comparefriends.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\comparefriends.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\comparefriends.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -15,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|e:\\my games\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,16 +43,8 @@
       "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\ownedgamesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\gamessearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\jumpscare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\jumpscare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|solutionrelative:steamedhamslauncher\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D63DCD2F-E99C-4F33-9445-1DEC3E488178}|SteamedHamsLauncher\\SteamedHamsLauncher.csproj|E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\steamedhamslauncher\\jumpscare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,13 +82,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\Form1.cs",
               "ToolTip": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.cs",
               "RelativeToolTip": "SteamedHamsLauncher\\Form1.cs",
-              "ViewState": "AQIAABMCAAAAAAAAAAAAwB0CAAAAAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAswCYAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T13:18:59.546Z",
               "IsPinned": true,
@@ -88,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Entwurf]",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\Form1.cs",
@@ -96,17 +104,18 @@
               "RelativeToolTip": "SteamedHamsLauncher\\Form1.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T13:18:39.362Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Entwurf]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "GamesSearch.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\GamesSearch.cs",
               "ToolTip": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.cs",
               "RelativeToolTip": "SteamedHamsLauncher\\GamesSearch.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAnwHAAAABfAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAArwHwAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T22:14:56.294Z",
               "IsPinned": true,
@@ -114,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "GamesSearch.cs [Entwurf]",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\GamesSearch.cs",
@@ -127,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "CompareFriends.cs [Entwurf]",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\CompareFriends.cs",
@@ -146,7 +155,7 @@
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\CompareFriends.cs",
               "ToolTip": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.cs",
               "RelativeToolTip": "SteamedHamsLauncher\\CompareFriends.cs",
-              "ViewState": "AQIAAOEAAAAAAAAAAAAkwO8AAAA1AAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAwwFEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T22:14:42.005Z",
               "IsPinned": true,
@@ -154,7 +163,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Program.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\Program.cs",
+              "ToolTip": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Program.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T03:15:41.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CompareFriends.Designer.cs",
+              "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.Designer.cs",
+              "RelativeDocumentMoniker": "SteamedHamsLauncher\\CompareFriends.Designer.cs",
+              "ToolTip": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\CompareFriends.Designer.cs",
+              "RelativeToolTip": "SteamedHamsLauncher\\CompareFriends.Designer.cs",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAiwNgAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T02:28:29.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "GameData.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\GameData.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\GameData.cs",
@@ -166,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "OwnedGamesResponse.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\OwnedGamesResponse.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\OwnedGamesResponse.cs",
@@ -178,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Jumpscare.cs [Entwurf]",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Jumpscare.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\Jumpscare.cs",
@@ -189,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Jumpscare.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Jumpscare.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\Jumpscare.cs",
@@ -201,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "UserSettings.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\UserSettings.cs",
@@ -213,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "UserSettings.cs [Entwurf]",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\UserSettings.cs",
@@ -223,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "GamesSearch.Designer.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\GamesSearch.Designer.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\GamesSearch.Designer.cs",
@@ -236,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\Form1.Designer.cs",
@@ -244,11 +279,12 @@
               "RelativeToolTip": "SteamedHamsLauncher\\Form1.Designer.cs",
               "ViewState": "AQIAAFoAAAAAAAAAAAAiwGsAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T00:19:21.726Z"
+              "WhenOpened": "2024-07-27T00:19:21.726Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "UserSettings.Designer.cs",
               "DocumentMoniker": "E:\\My Games\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\SteamedHamsLauncher\\UserSettings.Designer.cs",
               "RelativeDocumentMoniker": "SteamedHamsLauncher\\UserSettings.Designer.cs",

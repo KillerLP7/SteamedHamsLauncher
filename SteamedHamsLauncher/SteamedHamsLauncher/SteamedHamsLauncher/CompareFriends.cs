@@ -10,6 +10,8 @@ namespace SteamedHamsLauncher
 {
     public partial class FrmCompareFriends : Form
     {
+        public event Action<string> SteamIdUpdated;
+
         private string steamId;
         private string apiKey;
         private string appId;
@@ -227,32 +229,131 @@ namespace SteamedHamsLauncher
             }
         }
 
-        private void btnGetAllGames_Click(object sender, EventArgs e)
+        private async void btnGetAllGames_Click(object sender, EventArgs e)
         {
-            //Es soll nur die momentane steamID + gameIndex (oder appId) weitergegeben werden zu einer anderen Form
-            //Diese Form soll sich dann schließen, aber keine weitere Form öffnen, da die FrmShowGames, schon geöffnet ist.
+            // Lade die Spiele für die aktuelle Steam-ID
+            //var ownedGames = await LoadOwnedGamesAsync(steamId);
+
+            //// Überprüfe, ob die Liste leer ist
+            //if (ownedGames == null || !ownedGames.Any())
+            //{
+            //    MessageBox.Show("Keine Spiele gefunden.");
+            //    return;
+            //}
+
+            //// Zeige das erste Spiel an
+            //gameIndex = 0;
+            //UpdateGameDisplay();
+
+            // Ereignis auslösen
+            SteamIdUpdated?.Invoke(steamId);
+            Console.WriteLine("SteamIdUpdated event triggered with SteamId: " + steamId);
+
+            // Schließe das aktuelle Formular
+            this.Close();
         }
+
 
         private void btnSwitchPlaces_Click(object sender, EventArgs e)
         {
-            //steamId = friendSteamId; friendSteamId = steamId;
-            //Davor: Ich & Freund -> Klick auf den Knopf -> Freund & Ich, sehr wharschinlich muss man mich auf deren FreundesIndex suchen, damit ich angezeigt werde auf dem richtigen index.
-            //Texte die überarbeitet werden müssen: lblCreatedOn, lblCurrentGameName, lblFriendCreatedOn, lblFriendLastLogOff,lblFriendName,lblFriendSince,lblTotalCommonGames,lblTotalFriendGames,lblTotalFriends,lblTotalGames,lblLastLogOff
-            //Bilder müssen geändert werden: pbxUser, pbxFriend
-            //Die Methode DIsplayFriendInfo() könnte hilfreich sein
+            if (friends == null || friends.Count == 0) return;
+
+            // Swap the steamId and friend's steamId
+            string originalSteamId = steamId;
+            string friendSteamId = friends[friendIndex].steamid;
+
+            // Update the steamId to the friend's Steam ID
+            steamId = friendSteamId;
+
+            // Find the new friend's index based on the original Steam ID
+            var newFriend = friends.FirstOrDefault(f => f.steamid == originalSteamId);
+            if (newFriend != null)
+            {
+                friendIndex = friends.IndexOf(newFriend);
+            }
+            else
+            {
+                // If the friend is not found, default to the first friend or handle as needed
+                friendIndex = 0;
+            }
+
+            // Update the display with the new information
+            DisplayFriendInfo();
+
+            // Swap images
+            pbxUser.ImageLocation = $"https://www.steamidfinder.com/signature/{steamId}.png";
+            pbxFriend.ImageLocation = $"https://www.steamidfinder.com/signature/{friends[friendIndex].steamid}.png";
         }
+
+
+        private List<GameFriend> ownedGames;
+        private int gameIndex = 0;
 
         private void btnNextGame_Click(object sender, EventArgs e)
         {
-            //Hier die TotalCommonGamesIndex um eins erhöhen
-            //Name des Spiels soll in lblCurrentGameName stehen
-            //In lblTotalCommonGames soll undgefähr so angezeigt werden: $"{gameIndex} / {TotalCommonGames]"
+            if (ownedGames != null && gameIndex < ownedGames.Count - 1)
+            {
+                gameIndex++;
+                UpdateGameDisplay();
+            }
         }
 
         private void btnPrevGame_Click(object sender, EventArgs e)
         {
-            //Hier die TotalCommonGamesIndex um eins senken
+            if (ownedGames != null && gameIndex > 0)
+            {
+                gameIndex--;
+                UpdateGameDisplay();
+            }
         }
+
+        private void UpdateGameDisplay()
+        {
+            if (ownedGames == null || !ownedGames.Any())
+            {
+                lblCurrentGameName.Text = "Keine Spiele verfügbar";
+                lblTotalCommonGames.Text = "0 / 0";
+                return;
+            }
+
+            var currentGame = ownedGames[gameIndex];
+            lblCurrentGameName.Text = currentGame.Name;
+            lblTotalCommonGames.Text = $"{gameIndex + 1} / {ownedGames.Count}";
+        }
+
+        private async Task<List<GameFriend>> LoadOwnedGamesAsync(string steamId)
+        {
+            string url = $"http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={apiKey}&steamid={steamId}&include_appinfo=true&include_played_free_games&format=json";
+
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.GetStringAsync(url);
+                dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(response);
+                var games = json.response.games;
+
+                // Konvertiere die dynamische Liste in eine Liste von Game-Objekten
+                List<GameFriend> ownedGames = new List<GameFriend>();
+                foreach (var game in games)
+                {
+                    ownedGames.Add(new GameFriend
+                    {
+                        AppId = (int)game.appid,
+                        Name = (string)game.name
+                    });
+                }
+
+                return ownedGames;
+            }
+        }
+
+        public class GameFriend
+        {
+            public int AppId { get; set; }
+            public string Name { get; set; }
+        }
+
+
+
     }
 
     public class FriendListResponse
