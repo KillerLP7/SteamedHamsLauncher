@@ -227,6 +227,32 @@ namespace SteamedHamsLauncher
             }
         }
 
+        private void btnGetAllGames_Click(object sender, EventArgs e)
+        {
+            //Es soll nur die momentane steamID + gameIndex (oder appId) weitergegeben werden zu einer anderen Form
+            //Diese Form soll sich dann schließen, aber keine weitere Form öffnen, da die FrmShowGames, schon geöffnet ist.
+        }
+
+        private void btnSwitchPlaces_Click(object sender, EventArgs e)
+        {
+            //steamId = friendSteamId; friendSteamId = steamId;
+            //Davor: Ich & Freund -> Klick auf den Knopf -> Freund & Ich, sehr wharschinlich muss man mich auf deren FreundesIndex suchen, damit ich angezeigt werde auf dem richtigen index.
+            //Texte die überarbeitet werden müssen: lblCreatedOn, lblCurrentGameName, lblFriendCreatedOn, lblFriendLastLogOff,lblFriendName,lblFriendSince,lblTotalCommonGames,lblTotalFriendGames,lblTotalFriends,lblTotalGames,lblLastLogOff
+            //Bilder müssen geändert werden: pbxUser, pbxFriend
+            //Die Methode DIsplayFriendInfo() könnte hilfreich sein
+        }
+
+        private void btnNextGame_Click(object sender, EventArgs e)
+        {
+            //Hier die TotalCommonGamesIndex um eins erhöhen
+            //Name des Spiels soll in lblCurrentGameName stehen
+            //In lblTotalCommonGames soll undgefähr so angezeigt werden: $"{gameIndex} / {TotalCommonGames]"
+        }
+
+        private void btnPrevGame_Click(object sender, EventArgs e)
+        {
+            //Hier die TotalCommonGamesIndex um eins senken
+        }
     }
 
     public class FriendListResponse
