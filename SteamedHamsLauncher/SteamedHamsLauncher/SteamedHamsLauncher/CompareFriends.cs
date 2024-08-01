@@ -10,8 +10,6 @@ namespace SteamedHamsLauncher
 {
     public partial class FrmCompareFriends : Form
     {
-        public event Action<string> SteamIdUpdated;
-
         private string steamId;
         private string apiKey;
         private string appId;
@@ -246,8 +244,7 @@ namespace SteamedHamsLauncher
             //UpdateGameDisplay();
 
             // Ereignis auslösen
-            SteamIdUpdated?.Invoke(steamId);
-            Console.WriteLine("SteamIdUpdated event triggered with SteamId: " + steamId);
+            FrmShowGames.Instance.OnSteamIdUpdated(steamId);
 
             // Schließe das aktuelle Formular
             this.Close();

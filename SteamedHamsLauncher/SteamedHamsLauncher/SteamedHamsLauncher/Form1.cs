@@ -25,6 +25,8 @@ namespace SteamedHamsLauncher
         private Timer jumpscareTimer;
         private Random random;
 
+        public static FrmShowGames Instance;
+
         public FrmShowGames(string steamId = null, string apiKey = null, string appId = null)
         {
             InitializeComponent();
@@ -33,8 +35,9 @@ namespace SteamedHamsLauncher
             this.appId = appId;
             this.apiKey = apiKey;
 
+            Instance = this;
+
             var compareFriendsForm = new FrmCompareFriends(steamId, apiKey, appId);
-            compareFriendsForm.SteamIdUpdated += OnSteamIdUpdated; // Bind the event
 
             Console.WriteLine("Ereignis gebunden");
 
@@ -47,7 +50,7 @@ namespace SteamedHamsLauncher
             CheckSettings();
         }
 
-        private async void OnSteamIdUpdated(string newSteamId)
+        public async void OnSteamIdUpdated(string newSteamId)
         {
             // Debugging-Ausgabe hinzufügen
             Console.WriteLine("OnSteamIdUpdated aufgerufen");
@@ -356,7 +359,7 @@ namespace SteamedHamsLauncher
                 System.Diagnostics.Process.Start(steamUri);
             }
         }
-
+        #region sorting
         private void btnSortAZ_Click(object sender, EventArgs e)
         {
             if (CheckSettings())
@@ -472,6 +475,8 @@ namespace SteamedHamsLauncher
             }
         }
 
+        #endregion
+
         private void btnFriends_Click(object sender, EventArgs e)
         {
             if (CheckSettings())
@@ -481,7 +486,7 @@ namespace SteamedHamsLauncher
                 frmCompareFriends.ShowDialog();
             }
         }
-
+        
         private bool CheckSettings()
         {
             bool isLoggedIn = !string.IsNullOrEmpty(steamId) && !string.IsNullOrEmpty(apiKey);
@@ -495,7 +500,7 @@ namespace SteamedHamsLauncher
             btnLaunchGame.Visible = isLoggedIn;
             return isLoggedIn;
         }
-
+        
         public void Logout()
         {
             steamId = "";
