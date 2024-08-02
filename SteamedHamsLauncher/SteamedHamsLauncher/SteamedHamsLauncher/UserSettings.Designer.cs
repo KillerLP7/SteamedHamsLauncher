@@ -111,6 +111,7 @@
             this.Controls.Add(this.btnLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmUserSettings";
+            this.Opacity = 0.9D;
             this.Text = "User Settings";
             this.ResumeLayout(false);
             this.PerformLayout();

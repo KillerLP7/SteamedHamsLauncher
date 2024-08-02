@@ -48,6 +48,12 @@
             this.lblTotalCommonGames = new System.Windows.Forms.Label();
             this.lblTotalGames = new System.Windows.Forms.Label();
             this.lblTotalFriendGames = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblFavGame = new System.Windows.Forms.Label();
+            this.lblFriendFavGame = new System.Windows.Forms.Label();
+            this.lblLastPlayed = new System.Windows.Forms.Label();
+            this.lblFriendLastPlayed = new System.Windows.Forms.Label();
+            this.lblTotalGameHours = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFriend)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +118,7 @@
             this.lblLastLogOff.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastLogOff.Location = new System.Drawing.Point(12, 322);
             this.lblLastLogOff.Name = "lblLastLogOff";
-            this.lblLastLogOff.Size = new System.Drawing.Size(411, 53);
+            this.lblLastLogOff.Size = new System.Drawing.Size(411, 42);
             this.lblLastLogOff.TabIndex = 6;
             this.lblLastLogOff.Text = "Last time logged in: ";
             this.lblLastLogOff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,9 +146,9 @@
             // lblFriendSince
             // 
             this.lblFriendSince.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFriendSince.Location = new System.Drawing.Point(510, 392);
+            this.lblFriendSince.Location = new System.Drawing.Point(513, 489);
             this.lblFriendSince.Name = "lblFriendSince";
-            this.lblFriendSince.Size = new System.Drawing.Size(414, 34);
+            this.lblFriendSince.Size = new System.Drawing.Size(414, 25);
             this.lblFriendSince.TabIndex = 9;
             this.lblFriendSince.Text = "2024";
             this.lblFriendSince.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,9 +166,9 @@
             // lblFriendLastLogOff
             // 
             this.lblFriendLastLogOff.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFriendLastLogOff.Location = new System.Drawing.Point(513, 322);
+            this.lblFriendLastLogOff.Location = new System.Drawing.Point(513, 331);
             this.lblFriendLastLogOff.Name = "lblFriendLastLogOff";
-            this.lblFriendLastLogOff.Size = new System.Drawing.Size(411, 53);
+            this.lblFriendLastLogOff.Size = new System.Drawing.Size(411, 24);
             this.lblFriendLastLogOff.TabIndex = 11;
             this.lblFriendLastLogOff.Text = "Last time logged in: ";
             this.lblFriendLastLogOff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,9 +176,9 @@
             // lblFriendCreatedOn
             // 
             this.lblFriendCreatedOn.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFriendCreatedOn.Location = new System.Drawing.Point(513, 359);
+            this.lblFriendCreatedOn.Location = new System.Drawing.Point(513, 363);
             this.lblFriendCreatedOn.Name = "lblFriendCreatedOn";
-            this.lblFriendCreatedOn.Size = new System.Drawing.Size(411, 33);
+            this.lblFriendCreatedOn.Size = new System.Drawing.Size(411, 24);
             this.lblFriendCreatedOn.TabIndex = 12;
             this.lblFriendCreatedOn.Text = "Created on:";
             this.lblFriendCreatedOn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,7 +188,7 @@
             this.btnSwitchPlaces.BackColor = System.Drawing.Color.DarkOrange;
             this.btnSwitchPlaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSwitchPlaces.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSwitchPlaces.Location = new System.Drawing.Point(428, 12);
+            this.btnSwitchPlaces.Location = new System.Drawing.Point(429, 12);
             this.btnSwitchPlaces.Name = "btnSwitchPlaces";
             this.btnSwitchPlaces.Size = new System.Drawing.Size(75, 131);
             this.btnSwitchPlaces.TabIndex = 13;
@@ -252,9 +258,9 @@
             // lblTotalGames
             // 
             this.lblTotalGames.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGames.Location = new System.Drawing.Point(12, 388);
+            this.lblTotalGames.Location = new System.Drawing.Point(11, 392);
             this.lblTotalGames.Name = "lblTotalGames";
-            this.lblTotalGames.Size = new System.Drawing.Size(411, 43);
+            this.lblTotalGames.Size = new System.Drawing.Size(411, 29);
             this.lblTotalGames.TabIndex = 19;
             this.lblTotalGames.Text = "Games";
             this.lblTotalGames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,12 +268,72 @@
             // lblTotalFriendGames
             // 
             this.lblTotalFriendGames.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalFriendGames.Location = new System.Drawing.Point(513, 426);
+            this.lblTotalFriendGames.Location = new System.Drawing.Point(513, 393);
             this.lblTotalFriendGames.Name = "lblTotalFriendGames";
-            this.lblTotalFriendGames.Size = new System.Drawing.Size(411, 43);
+            this.lblTotalFriendGames.Size = new System.Drawing.Size(411, 26);
             this.lblTotalFriendGames.TabIndex = 20;
             this.lblTotalFriendGames.Text = "Games";
             this.lblTotalFriendGames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(9, 283);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(414, 53);
+            this.lblName.TabIndex = 21;
+            this.lblName.Text = "Lucca";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFavGame
+            // 
+            this.lblFavGame.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFavGame.Location = new System.Drawing.Point(11, 421);
+            this.lblFavGame.Name = "lblFavGame";
+            this.lblFavGame.Size = new System.Drawing.Size(411, 26);
+            this.lblFavGame.TabIndex = 24;
+            this.lblFavGame.Text = "Fav";
+            this.lblFavGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFriendFavGame
+            // 
+            this.lblFriendFavGame.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFriendFavGame.Location = new System.Drawing.Point(513, 421);
+            this.lblFriendFavGame.Name = "lblFriendFavGame";
+            this.lblFriendFavGame.Size = new System.Drawing.Size(411, 26);
+            this.lblFriendFavGame.TabIndex = 25;
+            this.lblFriendFavGame.Text = "Fav";
+            this.lblFriendFavGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblLastPlayed
+            // 
+            this.lblLastPlayed.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastPlayed.Location = new System.Drawing.Point(12, 452);
+            this.lblLastPlayed.Name = "lblLastPlayed";
+            this.lblLastPlayed.Size = new System.Drawing.Size(411, 26);
+            this.lblLastPlayed.TabIndex = 26;
+            this.lblLastPlayed.Text = "Last Played";
+            this.lblLastPlayed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFriendLastPlayed
+            // 
+            this.lblFriendLastPlayed.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFriendLastPlayed.Location = new System.Drawing.Point(513, 452);
+            this.lblFriendLastPlayed.Name = "lblFriendLastPlayed";
+            this.lblFriendLastPlayed.Size = new System.Drawing.Size(411, 26);
+            this.lblFriendLastPlayed.TabIndex = 27;
+            this.lblFriendLastPlayed.Text = "Last Played";
+            this.lblFriendLastPlayed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalGameHours
+            // 
+            this.lblTotalGameHours.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGameHours.Location = new System.Drawing.Point(512, 525);
+            this.lblTotalGameHours.Name = "lblTotalGameHours";
+            this.lblTotalGameHours.Size = new System.Drawing.Size(414, 25);
+            this.lblTotalGameHours.TabIndex = 28;
+            this.lblTotalGameHours.Text = "You: 1000 Hour/s Me: 1000 Hour/s";
+            this.lblTotalGameHours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmCompareFriends
             // 
@@ -275,6 +341,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1017, 617);
+            this.Controls.Add(this.lblTotalGameHours);
+            this.Controls.Add(this.lblFriendLastPlayed);
+            this.Controls.Add(this.lblLastPlayed);
+            this.Controls.Add(this.lblFriendFavGame);
+            this.Controls.Add(this.lblFavGame);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTotalFriendGames);
             this.Controls.Add(this.lblTotalGames);
             this.Controls.Add(this.lblTotalCommonGames);
@@ -298,6 +370,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmCompareFriends";
+            this.Opacity = 0.9D;
             this.Text = "CompareFriends";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmCompareFriends_Load);
@@ -329,5 +402,11 @@
         private System.Windows.Forms.Label lblTotalCommonGames;
         private System.Windows.Forms.Label lblTotalGames;
         private System.Windows.Forms.Label lblTotalFriendGames;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblFavGame;
+        private System.Windows.Forms.Label lblFriendFavGame;
+        private System.Windows.Forms.Label lblLastPlayed;
+        private System.Windows.Forms.Label lblFriendLastPlayed;
+        private System.Windows.Forms.Label lblTotalGameHours;
     }
 }

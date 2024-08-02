@@ -76,6 +76,7 @@
             this.Controls.Add(this.tbxSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmGamesSearch";
+            this.Opacity = 0.9D;
             this.Text = "GamesSearch";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmGamesSearch_Load);

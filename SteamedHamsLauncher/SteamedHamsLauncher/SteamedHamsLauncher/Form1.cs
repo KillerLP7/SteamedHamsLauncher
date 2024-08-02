@@ -84,7 +84,7 @@ namespace SteamedHamsLauncher
         {
             if (!string.IsNullOrEmpty(apiKey) && !string.IsNullOrEmpty(steamId))
             {
-                string steamApiUrl = $"https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key={apiKey}&steamid={steamId}&include_appinfo=true";
+                string steamApiUrl = $"https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key={apiKey}&steamid={steamId}&include_appinfo=true&include_played_free_games=true&format=json";
                 Console.WriteLine("My newest SteamID:" + steamId);
                 try
                 {
@@ -424,7 +424,12 @@ namespace SteamedHamsLauncher
             {
                 if (originalGames != null)
                 {
-                    games = originalGames.Where(g => g.LastPlayed < new DateTime(2020, 1, 1).ToUnixTime()).ToList();
+                    // Filtere Spiele, die vor dem 1. Januar 2020 gespielt wurden und mindestens 1 Stunde Spielzeit haben
+                    games = originalGames
+                        .Where(g => g.LastPlayed < new DateTime(2024, 1, 1).ToUnixTime() && g.PlaytimeForever >= 60) // 60 Minuten = 1 Stunde
+                        .OrderBy(g => g.LastPlayed) // Sortiere nach dem Datum vom ältesten bis zum neuesten
+                        .ToList();
+
                     if (games.Count > 0)
                     {
                         index = 0;
@@ -441,6 +446,8 @@ namespace SteamedHamsLauncher
                 }
             }
         }
+
+
 
         private void btnTopTen_Click(object sender, EventArgs e)
         {
@@ -554,14 +561,16 @@ namespace SteamedHamsLauncher
             this.ShowInTaskbar = false;
             this.Opacity = 0; // Transparenz auf 0% setzen
         }
+        #region nix
         private void InitializeJumpscareTimer()
         {
             random = new Random();
             jumpscareTimer = new Timer();
-            jumpscareTimer.Interval = random.Next(0 * 60 * 1000, 1 * 60 * 1000); // Zufälliger Intervall zwischen 5 und 15 Minuten
+            jumpscareTimer.Interval = random.Next(30 * 60 * 1000, 120 * 60 * 1000); // Zufälliger Intervall zwischen 5 und 15 Minuten
             jumpscareTimer.Tick += new EventHandler(JumpscareTimer_Tick);
             jumpscareTimer.Start();
         }
+        #endregion
         private void JumpscareTimer_Tick(object sender, EventArgs e)
         {
             jumpscareTimer.Stop(); // Timer stoppen, damit der Jumpscare nur einmal erscheint

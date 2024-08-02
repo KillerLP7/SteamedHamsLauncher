@@ -4,7 +4,10 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SteamKit2.CDN;
+using static SteamedHamsLauncher.FrmCompareFriends;
 
 namespace SteamedHamsLauncher
 {
@@ -16,6 +19,8 @@ namespace SteamedHamsLauncher
         private List<Friend> friends;
         private int friendIndex = 0;
         private string selectedFriendName;
+        private readonly HttpClient client = new HttpClient();
+
 
         public FrmCompareFriends(string steamId, string apiKey, string appId, string selectedFriendName = null)
         {
@@ -29,10 +34,8 @@ namespace SteamedHamsLauncher
         private async void FrmCompareFriends_Load(object sender, EventArgs e)
         {
             await LoadFriendList();
-            UpdateGameDisplay();
             if (friends != null && friends.Count > 0)
             {
-                DisplayFriendInfo();
                 // Falls ein ausgewählter Freund übergeben wurde, ihn hervorheben
                 if (!string.IsNullOrEmpty(selectedFriendName))
                 {
@@ -40,9 +43,9 @@ namespace SteamedHamsLauncher
                     if (selectedFriend != null)
                     {
                         friendIndex = friends.IndexOf(selectedFriend);
-                        DisplayFriendInfo();
                     }
                 }
+                DisplayFriendInfoAsync();
             }
             else
             {
@@ -56,29 +59,57 @@ namespace SteamedHamsLauncher
 
             using (HttpClient client = new HttpClient())
             {
-                var response = await client.GetStringAsync(friendlistUrl);
-                Console.WriteLine($"API Response: {response}");
-
                 try
                 {
-                    FriendListResponse json = Newtonsoft.Json.JsonConvert.DeserializeObject<FriendListResponse>(response);
-                    if (json?.friendslist?.friends != null)
+                    var response = await client.GetAsync(friendlistUrl);
+
+                    if (response.IsSuccessStatusCode)
                     {
-                        friends = json.friendslist.friends;
-                        Console.WriteLine($"Friends Count: {friends.Count}");
-                        await LoadFriendNames();
+                        var responseData = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine($"API Response: {responseData}");
+
+                        try
+                        {
+                            FriendListResponse json = Newtonsoft.Json.JsonConvert.DeserializeObject<FriendListResponse>(responseData);
+                            if (json?.friendslist?.friends != null)
+                            {
+                                friends = json.friendslist.friends;
+
+                                // Überprüfen, ob die Liste nur den eigenen Benutzer enthält
+                                if (friends.Any(f => f.steamid == steamId) && friends.Count == 1)
+                                {
+                                    MessageBox.Show("You have no friends to display.");
+                                    friends.Clear();
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"Friends Count: {friends.Count}");
+                                    await LoadFriendNames();
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("No friends found or response is null.");
+                                friends = new List<Friend>(); // Setze Freunde auf eine leere Liste
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Deserialization error: {ex.Message}");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("No friends found or response is null.");
+                        Console.WriteLine($"Error fetching friend list. Status code: {response.StatusCode}");
                     }
                 }
-                catch (Exception ex)
+                catch (HttpRequestException ex)
                 {
-                    Console.WriteLine($"Deserialization error: {ex.Message}");
+                    Console.WriteLine($"HTTP request error: {ex.Message}");
                 }
             }
         }
+
 
         private async Task LoadFriendNames()
         {
@@ -99,12 +130,11 @@ namespace SteamedHamsLauncher
                         friend.personaname = player.personaname;
                     }
                 }
-                DisplayFriendInfo();
+                DisplayFriendInfoAsync();
             }
-            
         }
 
-        private async void DisplayFriendInfo()
+        private async Task DisplayFriendInfoAsync()
         {
             if (friends == null || friends.Count == 0) return;
 
@@ -113,18 +143,21 @@ namespace SteamedHamsLauncher
             pbxUser.ImageLocation = $"https://www.steamidfinder.com/signature/{steamId}.png";
             pbxFriend.ImageLocation = $"https://www.steamidfinder.com/signature/{friendSteamId}.png";
 
-            // Fetch and display friend's profile information
+            // Fetch and display profile information
             string profileUrl = $"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={apiKey}&steamids={steamId}";
             string profileFriendUrl = $"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={apiKey}&steamids={friendSteamId}";
 
-            using (HttpClient client = new HttpClient())
+            try
             {
-                var response = await client.GetStringAsync(profileUrl);
-                dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(response);
+                var profileTask = client.GetStringAsync(profileUrl);
+                var profileFriendTask = client.GetStringAsync(profileFriendUrl);
+
+                await Task.WhenAll(profileTask, profileFriendTask);
+
+                dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(await profileTask);
                 var friendProfile = json.response.players[0];
 
-                var responseF = await client.GetStringAsync(profileFriendUrl);
-                dynamic jsonF = Newtonsoft.Json.JsonConvert.DeserializeObject(responseF);
+                dynamic jsonF = Newtonsoft.Json.JsonConvert.DeserializeObject(await profileFriendTask);
                 var friendProfileF = jsonF.response.players[0];
 
                 lblLastLogOff.Text = friendProfile.lastlogoff != null ?
@@ -143,23 +176,70 @@ namespace SteamedHamsLauncher
                     $"Account Created On: {UnixTimeStampToDateTime((double)friendProfileF.timecreated)}" :
                     "Account Created On: N/A";
 
-                // Display friend_since from the friend list data
-                if (friend.friend_since != null)
-                {
-                    lblFriendSince.Text = $"Friend Since: {UnixTimeStampToDateTime((double)friend.friend_since)}";
-                }
-                else
-                {
-                    lblFriendSince.Text = "Friend Since: N/A";
-                }
+                lblFriendSince.Text = friend.friend_since != null ?
+                    $"Friend Since: {UnixTimeStampToDateTime((double)friend.friend_since)}" :
+                    "Friend Since: N/A";
 
+                lblName.Text = $"{friendProfile.personaname}";
                 lblFriendName.Text = $"{friendProfileF.personaname}";
-            }
 
-            lblTotalFriends.Text = $"{friendIndex + 1}/{friends.Count}";
+                lblTotalFriends.Text = $"{friendIndex + 1}/{friends.Count}";
+
+                // Lade die Spiele für die beiden Steam-IDs
+                var userGamesTask = LoadOwnedGamesAsync(steamId);
+                var friendGamesTask = LoadOwnedGamesAsync(friendSteamId);
+
+                await Task.WhenAll(userGamesTask, friendGamesTask);
+
+                var userGames = await userGamesTask;
+                var friendGames = await friendGamesTask;
+
+                // Berechnung der Gesamtspielstunden und der Spiele mit 0 Stunden
+                var totalGameHours = userGames.Sum(game => game.Playtime) / 60.0; // Stunden
+                var totalFriendGameHours = friendGames.Sum(game => game.Playtime) / 60.0; // Stunden
+
+                var userGamesNeverPlayed = userGames.Count(game => game.Playtime == 0);
+                var friendGamesNeverPlayed = friendGames.Count(game => game.Playtime == 0);
+
+                lblTotalGameHours.Text = $"Wasted Hours: You: {totalGameHours:F2} / Friend: {totalFriendGameHours:F2}";
+                lblTotalGames.Text = $"Never Played Games: {userGamesNeverPlayed}/{userGames.Count}";
+                lblTotalFriendGames.Text = $"Never Played Games: {friendGamesNeverPlayed}/{friendGames.Count}";
+
+                // Anzeige des am meisten und zuletzt gespielten Spiels
+                var favGame = userGames.OrderByDescending(game => game.Playtime).FirstOrDefault();
+                var friendFavGame = friendGames.OrderByDescending(game => game.Playtime).FirstOrDefault();
+
+                var lastPlayedGame = GetMostRecentGame(userGames);
+                var friendLastPlayedGame = GetMostRecentGame(friendGames);
+
+                lblFavGame.Text = favGame != null ? $"Fav Game: {favGame.Name}" : "Fav Game: N/A";
+                lblFriendFavGame.Text = friendFavGame != null ? $"Fav Game: {friendFavGame.Name}" : "Fav Game: N/A";
+
+                lblLastPlayed.Text = lastPlayedGame != null ? $"Last Played: {lastPlayedGame.Name}" : "Last Played: N/A";
+                lblFriendLastPlayed.Text = friendLastPlayedGame != null ? $"Last Played: {friendLastPlayedGame.Name}" : "Last Played: N/A";
+
+                // Setze die gemeinsame Spiele-Liste
+                ownedGames = GetCommonGames(userGames, friendGames);
+                UpdateGameDisplay();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching or processing data: {ex.Message}");
+            }
         }
 
-        private void btnSearchFriend_Click(object sender, EventArgs e)
+
+
+
+
+
+        private List<GameFriend> GetCommonGames(List<GameFriend> userGames, List<GameFriend> friendGames)
+        {
+            var commonGames = userGames.Where(g1 => friendGames.Any(g2 => g2.AppId == g1.AppId)).ToList();
+            return commonGames;
+        }
+
+        private async void btnSearchFriend_Click(object sender, EventArgs e)
         {
             if (friends != null && friends.Count > 0)
             {
@@ -180,7 +260,7 @@ namespace SteamedHamsLauncher
                 };
 
                 frmFriendsSearch.ShowDialog();
-                DisplayFriendInfo();
+                DisplayFriendInfoAsync();
             }
             else
             {
@@ -188,24 +268,43 @@ namespace SteamedHamsLauncher
             }
         }
 
-
-
-
         private void btnPrevFriend_Click(object sender, EventArgs e)
         {
-            if (friendIndex > 0)
+            if (friends != null && friends.Count > 0)
             {
-                friendIndex--;
-                DisplayFriendInfo();
+                if (friendIndex > 0)
+                {
+                    friendIndex--;
+                    DisplayFriendInfoAsync();
+                }
+                else
+                {
+                    MessageBox.Show("No previous friend available.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No friends to navigate.");
             }
         }
 
         private void btnNextFriend_Click(object sender, EventArgs e)
         {
-            if (friendIndex < friends.Count - 1)
+            if (friends != null && friends.Count > 0)
             {
-                friendIndex++;
-                DisplayFriendInfo();
+                if (friendIndex < friends.Count - 1)
+                {
+                    friendIndex++;
+                    DisplayFriendInfoAsync();
+                }
+                else
+                {
+                    MessageBox.Show("No next friend available.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No friends to navigate.");
             }
         }
 
@@ -234,39 +333,21 @@ namespace SteamedHamsLauncher
         private void btnGetAllGames_Click(object sender, EventArgs e)
         {
             // Lade die Spiele für die aktuelle Steam-ID
-            //var ownedGames = await LoadOwnedGamesAsync(steamId);
-
-            //// Überprüfe, ob die Liste leer ist
-            //if (ownedGames == null || !ownedGames.Any())
-            //{
-            //    MessageBox.Show("Keine Spiele gefunden.");
-            //    return;
-            //}
-
-            //// Zeige das erste Spiel an
-            //gameIndex = 0;
-            //UpdateGameDisplay();
-
-            // Ereignis auslösen
             FrmShowGames.Instance.OnSteamIdUpdated(steamId);
 
             // Schließe das aktuelle Formular
             this.Close();
         }
 
-
         private async void btnSwitchPlaces_Click(object sender, EventArgs e)
         {
             if (friends == null || friends.Count == 0) return;
 
-            // Swap the steamId and friend's steamId
             string originalSteamId = steamId;
             string friendSteamId = friends[friendIndex].steamid;
 
-            // Update the steamId to the friend's Steam ID
             steamId = friendSteamId;
 
-            // Find the new friend's index based on the original Steam ID
             var newFriend = friends.FirstOrDefault(f => f.steamid == originalSteamId);
             if (newFriend != null)
             {
@@ -274,25 +355,28 @@ namespace SteamedHamsLauncher
             }
             else
             {
-                // If the friend is not found, default to the first friend or handle as needed
                 friendIndex = 0;
             }
 
-            // Swap images
             pbxUser.ImageLocation = $"https://www.steamidfinder.com/signature/{steamId}.png";
             pbxFriend.ImageLocation = $"https://www.steamidfinder.com/signature/{friends[friendIndex].steamid}.png";
 
-            // Update the display with the new information
-            await LoadFriendNames();
-            await LoadFriendList();
-            DisplayFriendInfo();
+            try
+            {
+                await LoadFriendNames();
+                await LoadFriendList();
+                await DisplayFriendInfoAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error while switching places: {ex.Message}");
+            }
         }
+
 
 
         private List<GameFriend> ownedGames;
         private int gameIndex = 0;
-
-        //Ich möchte gerne durch 
 
         private void btnNextGame_Click(object sender, EventArgs e)
         {
@@ -316,49 +400,88 @@ namespace SteamedHamsLauncher
         {
             if (ownedGames == null || !ownedGames.Any())
             {
-                lblCurrentGameName.Text = "Keine Spiele verfügbar";
+                lblCurrentGameName.Text = "Keine gemeinsamen Spiele verfügbar";
                 lblTotalCommonGames.Text = "0 / 0";
+                Console.WriteLine("No owned games to display.");
                 return;
             }
 
             var currentGame = ownedGames[gameIndex];
             lblCurrentGameName.Text = currentGame.Name;
             lblTotalCommonGames.Text = $"{gameIndex + 1} / {ownedGames.Count}";
-            DisplayFriendInfo();
+            Console.WriteLine($"Displaying game: {currentGame.Name}, {gameIndex + 1}/{ownedGames.Count}");
         }
+
+        private GameFriend GetMostRecentGame(List<GameFriend> games)
+        {
+            if (games == null || games.Count == 0) return null;
+
+            // Berechne den heutigen Tag
+            DateTime today = DateTime.Now.Date;
+
+            // Finde das Spiel, das am nächsten zum heutigen Datum liegt
+            return games.OrderBy(game => Math.Abs((today - game.LastPlaytime.Date).TotalDays)).FirstOrDefault();
+        }
+
+
 
         private async Task<List<GameFriend>> LoadOwnedGamesAsync(string steamId)
         {
-            string url = $"http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={apiKey}&steamid={steamId}&include_appinfo=true&include_played_free_games&format=json";
+            string url = $"http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={apiKey}&steamid={steamId}&include_appinfo=true&include_played_free_games=true&format=json";
 
             using (HttpClient client = new HttpClient())
             {
-                var response = await client.GetStringAsync(url);
-                dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(response);
-                var games = json.response.games;
-
-                // Konvertiere die dynamische Liste in eine Liste von Game-Objekten
-                List<GameFriend> ownedGames = new List<GameFriend>();
-                foreach (var game in games)
+                try
                 {
-                    ownedGames.Add(new GameFriend
-                    {
-                        AppId = (int)game.appid,
-                        Name = (string)game.name
-                    });
-                }
+                    var response = await client.GetStringAsync(url);
+                    dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(response);
 
-                return ownedGames;
+                    if (json?.response?.games != null)
+                    {
+                        var games = json.response.games;
+
+                        // Konvertiere die dynamische Liste in eine Liste von Game-Objekten
+                        List<GameFriend> ownedGames = new List<GameFriend>();
+                        foreach (var game in games)
+                        {
+                            ownedGames.Add(new GameFriend
+                            {
+                                AppId = (int)game.appid,
+                                Name = (string)game.name,
+                                Playtime = (int)game.playtime_forever, // Gesamtspielzeit in Minuten
+                                LastPlaytime = game.last_played != null
+                                    ? UnixTimeStampToDateTime((double)game.last_played)
+                                    : DateTime.MinValue // Setze auf Minimum-Wert, wenn kein Datum vorhanden
+                            });
+                        }
+
+                        return ownedGames;
+                    }
+                    else
+                    {
+                        return new List<GameFriend>();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching games: {ex.Message}");
+                    return new List<GameFriend>();
+                }
             }
         }
+
+
+
+        // Response models
+
 
         public class GameFriend
         {
             public int AppId { get; set; }
             public string Name { get; set; }
+            public int Playtime { get; set; } // Gesamtspielzeit in Minuten
+            public DateTime LastPlaytime { get; set; } // Letztes Spiel-Datum als DateTime
         }
-
-
 
     }
 
